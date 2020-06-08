@@ -39,9 +39,9 @@ import (
 	"io"
 	"os"
 
-	pb "github.com/gogo/protobuf/conformance/internal/conformance_proto"
-	"github.com/gogo/protobuf/jsonpb"
-	"github.com/gogo/protobuf/proto"
+	pb "github.com/temporalio/gogo-protobuf/conformance/internal/conformance_proto"
+	"github.com/temporalio/gogo-protobuf/jsonpb"
+	"github.com/temporalio/gogo-protobuf/proto"
 )
 
 func main() {

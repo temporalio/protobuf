@@ -35,9 +35,9 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/gogo/protobuf/proto"
-	pb "github.com/gogo/protobuf/proto/proto3_proto"
-	tpb "github.com/gogo/protobuf/proto/test_proto"
+	"github.com/temporalio/gogo-protobuf/proto"
+	pb "github.com/temporalio/gogo-protobuf/proto/proto3_proto"
+	tpb "github.com/temporalio/gogo-protobuf/proto/test_proto"
 )
 
 func TestProto3ZeroValues(t *testing.T) {

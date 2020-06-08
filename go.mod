@@ -1,4 +1,4 @@
-module github.com/gogo/protobuf
+module github.com/temporalio/gogo-protobuf
 
 go 1.14
 

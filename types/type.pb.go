@@ -6,7 +6,7 @@ package types
 import (
 	bytes "bytes"
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
+	proto "github.com/temporalio/gogo-protobuf/proto"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -37,13 +37,13 @@ const (
 )
 
 var Syntax_name = map[int32]string{
-	0: "SYNTAX_PROTO2",
-	1: "SYNTAX_PROTO3",
+	0: "Proto2",
+	1: "Proto3",
 }
 
 var Syntax_value = map[string]int32{
-	"SYNTAX_PROTO2": 0,
-	"SYNTAX_PROTO3": 1,
+	"Proto2": 0,
+	"Proto3": 1,
 }
 
 func (Syntax) EnumDescriptor() ([]byte, []int) {
@@ -95,47 +95,47 @@ const (
 )
 
 var Field_Kind_name = map[int32]string{
-	0:  "TYPE_UNKNOWN",
-	1:  "TYPE_DOUBLE",
-	2:  "TYPE_FLOAT",
-	3:  "TYPE_INT64",
-	4:  "TYPE_UINT64",
-	5:  "TYPE_INT32",
-	6:  "TYPE_FIXED64",
-	7:  "TYPE_FIXED32",
-	8:  "TYPE_BOOL",
-	9:  "TYPE_STRING",
-	10: "TYPE_GROUP",
-	11: "TYPE_MESSAGE",
-	12: "TYPE_BYTES",
-	13: "TYPE_UINT32",
-	14: "TYPE_ENUM",
-	15: "TYPE_SFIXED32",
-	16: "TYPE_SFIXED64",
-	17: "TYPE_SINT32",
-	18: "TYPE_SINT64",
+	0:  "TypeUnknown",
+	1:  "TypeDouble",
+	2:  "TypeFloat",
+	3:  "TypeInt64",
+	4:  "TypeUint64",
+	5:  "TypeInt32",
+	6:  "TypeFixed64",
+	7:  "TypeFixed32",
+	8:  "TypeBool",
+	9:  "TypeString",
+	10: "TypeGroup",
+	11: "TypeMessage",
+	12: "TypeBytes",
+	13: "TypeUint32",
+	14: "TypeEnum",
+	15: "TypeSfixed32",
+	16: "TypeSfixed64",
+	17: "TypeSint32",
+	18: "TypeSint64",
 }
 
 var Field_Kind_value = map[string]int32{
-	"TYPE_UNKNOWN":  0,
-	"TYPE_DOUBLE":   1,
-	"TYPE_FLOAT":    2,
-	"TYPE_INT64":    3,
-	"TYPE_UINT64":   4,
-	"TYPE_INT32":    5,
-	"TYPE_FIXED64":  6,
-	"TYPE_FIXED32":  7,
-	"TYPE_BOOL":     8,
-	"TYPE_STRING":   9,
-	"TYPE_GROUP":    10,
-	"TYPE_MESSAGE":  11,
-	"TYPE_BYTES":    12,
-	"TYPE_UINT32":   13,
-	"TYPE_ENUM":     14,
-	"TYPE_SFIXED32": 15,
-	"TYPE_SFIXED64": 16,
-	"TYPE_SINT32":   17,
-	"TYPE_SINT64":   18,
+	"TypeUnknown":  0,
+	"TypeDouble":   1,
+	"TypeFloat":    2,
+	"TypeInt64":    3,
+	"TypeUint64":   4,
+	"TypeInt32":    5,
+	"TypeFixed64":  6,
+	"TypeFixed32":  7,
+	"TypeBool":     8,
+	"TypeString":   9,
+	"TypeGroup":    10,
+	"TypeMessage":  11,
+	"TypeBytes":    12,
+	"TypeUint32":   13,
+	"TypeEnum":     14,
+	"TypeSfixed32": 15,
+	"TypeSfixed64": 16,
+	"TypeSint32":   17,
+	"TypeSint64":   18,
 }
 
 func (Field_Kind) EnumDescriptor() ([]byte, []int) {
@@ -157,17 +157,17 @@ const (
 )
 
 var Field_Cardinality_name = map[int32]string{
-	0: "CARDINALITY_UNKNOWN",
-	1: "CARDINALITY_OPTIONAL",
-	2: "CARDINALITY_REQUIRED",
-	3: "CARDINALITY_REPEATED",
+	0: "CardinalityUnknown",
+	1: "CardinalityOptional",
+	2: "CardinalityRequired",
+	3: "CardinalityRepeated",
 }
 
 var Field_Cardinality_value = map[string]int32{
-	"CARDINALITY_UNKNOWN":  0,
-	"CARDINALITY_OPTIONAL": 1,
-	"CARDINALITY_REQUIRED": 2,
-	"CARDINALITY_REPEATED": 3,
+	"CardinalityUnknown":  0,
+	"CardinalityOptional": 1,
+	"CardinalityRequired": 2,
+	"CardinalityRepeated": 3,
 }
 
 func (Field_Cardinality) EnumDescriptor() ([]byte, []int) {

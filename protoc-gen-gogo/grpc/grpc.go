@@ -39,8 +39,8 @@ import (
 	"strconv"
 	"strings"
 
-	pb "github.com/gogo/protobuf/protoc-gen-gogo/descriptor"
-	"github.com/gogo/protobuf/protoc-gen-gogo/generator"
+	pb "github.com/temporalio/gogo-protobuf/protoc-gen-gogo/descriptor"
+	"github.com/temporalio/gogo-protobuf/protoc-gen-gogo/generator"
 )
 
 // generatedCodeVersion indicates a version of the generated code.

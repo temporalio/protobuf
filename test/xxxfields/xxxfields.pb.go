@@ -6,8 +6,8 @@ package test
 import (
 	bytes "bytes"
 	fmt "fmt"
-	_ "github.com/gogo/protobuf/gogoproto"
-	proto "github.com/gogo/protobuf/proto"
+	_ "github.com/temporalio/gogo-protobuf/gogoproto"
+	proto "github.com/temporalio/gogo-protobuf/proto"
 	math "math"
 )
 

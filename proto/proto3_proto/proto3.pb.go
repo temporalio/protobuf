@@ -5,9 +5,9 @@ package proto3_proto
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	test_proto "github.com/gogo/protobuf/proto/test_proto"
-	types "github.com/gogo/protobuf/types"
+	proto "github.com/temporalio/gogo-protobuf/proto"
+	test_proto "github.com/temporalio/gogo-protobuf/proto/test_proto"
+	types "github.com/temporalio/gogo-protobuf/types"
 	math "math"
 )
 
@@ -32,17 +32,17 @@ const (
 )
 
 var Message_Humour_name = map[int32]string{
-	0: "UNKNOWN",
-	1: "PUNS",
-	2: "SLAPSTICK",
-	3: "BILL_BAILEY",
+	0: "Unknown",
+	1: "Puns",
+	2: "Slapstick",
+	3: "BillBailey",
 }
 
 var Message_Humour_value = map[string]int32{
-	"UNKNOWN":     0,
-	"PUNS":        1,
-	"SLAPSTICK":   2,
-	"BILL_BAILEY": 3,
+	"Unknown":    0,
+	"Puns":       1,
+	"Slapstick":  2,
+	"BillBailey": 3,
 }
 
 func (x Message_Humour) String() string {

@@ -7,8 +7,8 @@ import (
 	bytes "bytes"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	github_com_gogo_protobuf_sortkeys "github.com/gogo/protobuf/sortkeys"
+	proto "github.com/temporalio/gogo-protobuf/proto"
+	github_com_temporalio_gogo_protobuf_sortkeys "github.com/temporalio/gogo-protobuf/sortkeys"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -40,11 +40,11 @@ const (
 )
 
 var NullValue_name = map[int32]string{
-	0: "NULL_VALUE",
+	0: "",
 }
 
 var NullValue_value = map[string]int32{
-	"NULL_VALUE": 0,
+	"": 0,
 }
 
 func (NullValue) EnumDescriptor() ([]byte, []int) {
@@ -973,10 +973,10 @@ func (this *Struct) GoString() string {
 	s := make([]string, 0, 5)
 	s = append(s, "&types.Struct{")
 	keysForFields := make([]string, 0, len(this.Fields))
-	for k := range this.Fields {
+	for k, _ := range this.Fields {
 		keysForFields = append(keysForFields, k)
 	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForFields)
+	github_com_temporalio_gogo_protobuf_sortkeys.Strings(keysForFields)
 	mapStringForFields := "map[string]*Value{"
 	for _, k := range keysForFields {
 		mapStringForFields += fmt.Sprintf("%#v: %#v,", k, this.Fields[k])
@@ -1604,10 +1604,10 @@ func (this *Struct) String() string {
 		return "nil"
 	}
 	keysForFields := make([]string, 0, len(this.Fields))
-	for k := range this.Fields {
+	for k, _ := range this.Fields {
 		keysForFields = append(keysForFields, k)
 	}
-	github_com_gogo_protobuf_sortkeys.Strings(keysForFields)
+	github_com_temporalio_gogo_protobuf_sortkeys.Strings(keysForFields)
 	mapStringForFields := "map[string]*Value{"
 	for _, k := range keysForFields {
 		mapStringForFields += fmt.Sprintf("%v: %v,", k, this.Fields[k])

@@ -5,7 +5,7 @@ package jsonpb
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
+	proto "github.com/temporalio/gogo-protobuf/proto"
 	math "math"
 )
 
@@ -29,15 +29,15 @@ const (
 )
 
 var Numeral_name = map[int32]string{
-	0: "UNKNOWN",
-	1: "ARABIC",
-	2: "ROMAN",
+	0: "Unknown",
+	1: "Arabic",
+	2: "Roman",
 }
 
 var Numeral_value = map[string]int32{
-	"UNKNOWN": 0,
-	"ARABIC":  1,
-	"ROMAN":   2,
+	"Unknown": 0,
+	"Arabic":  1,
+	"Roman":   2,
 }
 
 func (x Numeral) String() string {

@@ -5,8 +5,8 @@ package conformance
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	types "github.com/gogo/protobuf/types"
+	proto "github.com/temporalio/gogo-protobuf/proto"
+	types "github.com/temporalio/gogo-protobuf/types"
 	math "math"
 )
 
@@ -30,15 +30,15 @@ const (
 )
 
 var WireFormat_name = map[int32]string{
-	0: "UNSPECIFIED",
-	1: "PROTOBUF",
-	2: "JSON",
+	0: "Unspecified",
+	1: "Protobuf",
+	2: "Json",
 }
 
 var WireFormat_value = map[string]int32{
-	"UNSPECIFIED": 0,
-	"PROTOBUF":    1,
-	"JSON":        2,
+	"Unspecified": 0,
+	"Protobuf":    1,
+	"Json":        2,
 }
 
 func (x WireFormat) String() string {
@@ -58,15 +58,15 @@ const (
 )
 
 var ForeignEnum_name = map[int32]string{
-	0: "FOREIGN_FOO",
-	1: "FOREIGN_BAR",
-	2: "FOREIGN_BAZ",
+	0: "ForeignFoo",
+	1: "ForeignBar",
+	2: "ForeignBaz",
 }
 
 var ForeignEnum_value = map[string]int32{
-	"FOREIGN_FOO": 0,
-	"FOREIGN_BAR": 1,
-	"FOREIGN_BAZ": 2,
+	"ForeignFoo": 0,
+	"ForeignBar": 1,
+	"ForeignBaz": 2,
 }
 
 func (x ForeignEnum) String() string {
@@ -87,17 +87,17 @@ const (
 )
 
 var TestAllTypes_NestedEnum_name = map[int32]string{
-	0:  "FOO",
-	1:  "BAR",
-	2:  "BAZ",
-	-1: "NEG",
+	0:  "Foo",
+	1:  "Bar",
+	2:  "Baz",
+	-1: "Neg",
 }
 
 var TestAllTypes_NestedEnum_value = map[string]int32{
-	"FOO": 0,
-	"BAR": 1,
-	"BAZ": 2,
-	"NEG": -1,
+	"Foo": 0,
+	"Bar": 1,
+	"Baz": 2,
+	"Neg": -1,
 }
 
 func (x TestAllTypes_NestedEnum) String() string {

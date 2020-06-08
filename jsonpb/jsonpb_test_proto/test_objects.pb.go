@@ -5,8 +5,8 @@ package jsonpb
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
-	types "github.com/gogo/protobuf/types"
+	proto "github.com/temporalio/gogo-protobuf/proto"
+	types "github.com/temporalio/gogo-protobuf/types"
 	math "math"
 )
 
@@ -30,15 +30,15 @@ const (
 )
 
 var Widget_Color_name = map[int32]string{
-	0: "RED",
-	1: "GREEN",
-	2: "BLUE",
+	0: "Red",
+	1: "Green",
+	2: "Blue",
 }
 
 var Widget_Color_value = map[string]int32{
-	"RED":   0,
-	"GREEN": 1,
-	"BLUE":  2,
+	"Red":   0,
+	"Green": 1,
+	"Blue":  2,
 }
 
 func (x Widget_Color) Enum() *Widget_Color {

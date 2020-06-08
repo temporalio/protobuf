@@ -5,7 +5,7 @@ package descriptor
 
 import (
 	fmt "fmt"
-	proto "github.com/gogo/protobuf/proto"
+	proto "github.com/temporalio/gogo-protobuf/proto"
 	math "math"
 )
 
@@ -55,45 +55,45 @@ const (
 )
 
 var FieldDescriptorProto_Type_name = map[int32]string{
-	1:  "TYPE_DOUBLE",
-	2:  "TYPE_FLOAT",
-	3:  "TYPE_INT64",
-	4:  "TYPE_UINT64",
-	5:  "TYPE_INT32",
-	6:  "TYPE_FIXED64",
-	7:  "TYPE_FIXED32",
-	8:  "TYPE_BOOL",
-	9:  "TYPE_STRING",
-	10: "TYPE_GROUP",
-	11: "TYPE_MESSAGE",
-	12: "TYPE_BYTES",
-	13: "TYPE_UINT32",
-	14: "TYPE_ENUM",
-	15: "TYPE_SFIXED32",
-	16: "TYPE_SFIXED64",
-	17: "TYPE_SINT32",
-	18: "TYPE_SINT64",
+	1:  "TypeDouble",
+	2:  "TypeFloat",
+	3:  "TypeInt64",
+	4:  "TypeUint64",
+	5:  "TypeInt32",
+	6:  "TypeFixed64",
+	7:  "TypeFixed32",
+	8:  "TypeBool",
+	9:  "TypeString",
+	10: "TypeGroup",
+	11: "TypeMessage",
+	12: "TypeBytes",
+	13: "TypeUint32",
+	14: "TypeEnum",
+	15: "TypeSfixed32",
+	16: "TypeSfixed64",
+	17: "TypeSint32",
+	18: "TypeSint64",
 }
 
 var FieldDescriptorProto_Type_value = map[string]int32{
-	"TYPE_DOUBLE":   1,
-	"TYPE_FLOAT":    2,
-	"TYPE_INT64":    3,
-	"TYPE_UINT64":   4,
-	"TYPE_INT32":    5,
-	"TYPE_FIXED64":  6,
-	"TYPE_FIXED32":  7,
-	"TYPE_BOOL":     8,
-	"TYPE_STRING":   9,
-	"TYPE_GROUP":    10,
-	"TYPE_MESSAGE":  11,
-	"TYPE_BYTES":    12,
-	"TYPE_UINT32":   13,
-	"TYPE_ENUM":     14,
-	"TYPE_SFIXED32": 15,
-	"TYPE_SFIXED64": 16,
-	"TYPE_SINT32":   17,
-	"TYPE_SINT64":   18,
+	"TypeDouble":   1,
+	"TypeFloat":    2,
+	"TypeInt64":    3,
+	"TypeUint64":   4,
+	"TypeInt32":    5,
+	"TypeFixed64":  6,
+	"TypeFixed32":  7,
+	"TypeBool":     8,
+	"TypeString":   9,
+	"TypeGroup":    10,
+	"TypeMessage":  11,
+	"TypeBytes":    12,
+	"TypeUint32":   13,
+	"TypeEnum":     14,
+	"TypeSfixed32": 15,
+	"TypeSfixed64": 16,
+	"TypeSint32":   17,
+	"TypeSint64":   18,
 }
 
 func (x FieldDescriptorProto_Type) Enum() *FieldDescriptorProto_Type {
@@ -129,15 +129,15 @@ const (
 )
 
 var FieldDescriptorProto_Label_name = map[int32]string{
-	1: "LABEL_OPTIONAL",
-	2: "LABEL_REQUIRED",
-	3: "LABEL_REPEATED",
+	1: "LabelOptional",
+	2: "LabelRequired",
+	3: "LabelRepeated",
 }
 
 var FieldDescriptorProto_Label_value = map[string]int32{
-	"LABEL_OPTIONAL": 1,
-	"LABEL_REQUIRED": 2,
-	"LABEL_REPEATED": 3,
+	"LabelOptional": 1,
+	"LabelRequired": 2,
+	"LabelRepeated": 3,
 }
 
 func (x FieldDescriptorProto_Label) Enum() *FieldDescriptorProto_Label {
@@ -174,15 +174,15 @@ const (
 )
 
 var FileOptions_OptimizeMode_name = map[int32]string{
-	1: "SPEED",
-	2: "CODE_SIZE",
-	3: "LITE_RUNTIME",
+	1: "Speed",
+	2: "CodeSize",
+	3: "LiteRuntime",
 }
 
 var FileOptions_OptimizeMode_value = map[string]int32{
-	"SPEED":        1,
-	"CODE_SIZE":    2,
-	"LITE_RUNTIME": 3,
+	"Speed":       1,
+	"CodeSize":    2,
+	"LiteRuntime": 3,
 }
 
 func (x FileOptions_OptimizeMode) Enum() *FileOptions_OptimizeMode {
@@ -218,15 +218,15 @@ const (
 )
 
 var FieldOptions_CType_name = map[int32]string{
-	0: "STRING",
-	1: "CORD",
-	2: "STRING_PIECE",
+	0: "String",
+	1: "Cord",
+	2: "StringPiece",
 }
 
 var FieldOptions_CType_value = map[string]int32{
-	"STRING":       0,
-	"CORD":         1,
-	"STRING_PIECE": 2,
+	"String":      0,
+	"Cord":        1,
+	"StringPiece": 2,
 }
 
 func (x FieldOptions_CType) Enum() *FieldOptions_CType {
@@ -264,15 +264,15 @@ const (
 )
 
 var FieldOptions_JSType_name = map[int32]string{
-	0: "JS_NORMAL",
-	1: "JS_STRING",
-	2: "JS_NUMBER",
+	0: "JsNormal",
+	1: "JsString",
+	2: "JsNumber",
 }
 
 var FieldOptions_JSType_value = map[string]int32{
-	"JS_NORMAL": 0,
-	"JS_STRING": 1,
-	"JS_NUMBER": 2,
+	"JsNormal": 0,
+	"JsString": 1,
+	"JsNumber": 2,
 }
 
 func (x FieldOptions_JSType) Enum() *FieldOptions_JSType {
@@ -310,15 +310,15 @@ const (
 )
 
 var MethodOptions_IdempotencyLevel_name = map[int32]string{
-	0: "IDEMPOTENCY_UNKNOWN",
-	1: "NO_SIDE_EFFECTS",
-	2: "IDEMPOTENT",
+	0: "IdempotencyUnknown",
+	1: "NoSideEffects",
+	2: "Idempotent",
 }
 
 var MethodOptions_IdempotencyLevel_value = map[string]int32{
-	"IDEMPOTENCY_UNKNOWN": 0,
-	"NO_SIDE_EFFECTS":     1,
-	"IDEMPOTENT":          2,
+	"IdempotencyUnknown": 0,
+	"NoSideEffects":      1,
+	"Idempotent":         2,
 }
 
 func (x MethodOptions_IdempotencyLevel) Enum() *MethodOptions_IdempotencyLevel {
