@@ -1515,7 +1515,7 @@ func (g *Generator) generateEnum(enum *EnumDescriptor) {
 		if _, present := generated[*e.Number]; present {
 			duplicate = "// Duplicate value: "
 		}
-		g.P(duplicate, e.Number, ": ", strconv.Quote(*e.Name), ",")
+		g.P(duplicate, e.Number, ": ", strconv.Quote(strings.TrimPrefix(CamelCase(strings.ToLower(*e.Name)), ccTypeName)), ",")
 		generated[*e.Number] = true
 	}
 	g.Out()
@@ -1524,7 +1524,7 @@ func (g *Generator) generateEnum(enum *EnumDescriptor) {
 	g.P("var ", ccTypeName, "_value = map[string]int32{")
 	g.In()
 	for _, e := range enum.Value {
-		g.P(strconv.Quote(*e.Name), ": ", e.Number, ",")
+		g.P(strconv.Quote(strings.TrimPrefix(CamelCase(strings.ToLower(*e.Name)), ccTypeName)), ": ", e.Number, ",")
 	}
 	g.Out()
 	g.P("}")
