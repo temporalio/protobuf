@@ -61,8 +61,8 @@ func (p *plugin) Generate(file *generator.FileDescriptor) {
 	p.PluginImports = generator.NewPluginImports(p.Generator)
 	p.fmtPkg = p.NewImport("fmt")
 	p.bytesPkg = p.NewImport("bytes")
-	p.sortkeysPkg = p.NewImport("github.com/temporalio/gogo-protobuf/sortkeys")
-	p.protoPkg = p.NewImport("github.com/temporalio/gogo-protobuf/proto")
+	p.sortkeysPkg = p.NewImport("github.com/gogo/protobuf/sortkeys")
+	p.protoPkg = p.NewImport("github.com/gogo/protobuf/proto")
 
 	for _, msg := range file.Messages() {
 		if msg.DescriptorProto.GetOptions().GetMapEntry() {

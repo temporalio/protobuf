@@ -127,8 +127,8 @@ func (p *stringer) Generate(file *generator.FileDescriptor) {
 	fmtPkg := p.NewImport("fmt")
 	stringsPkg := p.NewImport("strings")
 	reflectPkg := p.NewImport("reflect")
-	sortKeysPkg := p.NewImport("github.com/temporalio/gogo-protobuf/sortkeys")
-	protoPkg := p.NewImport("github.com/temporalio/gogo-protobuf/proto")
+	sortKeysPkg := p.NewImport("github.com/gogo/protobuf/sortkeys")
+	protoPkg := p.NewImport("github.com/gogo/protobuf/proto")
 	for _, message := range file.Messages() {
 		if !gogoproto.IsStringer(file.FileDescriptorProto, message.DescriptorProto) {
 			continue
