@@ -1515,7 +1515,7 @@ func (g *Generator) generateEnum(enum *EnumDescriptor) {
 		if _, present := generated[*e.Number]; present {
 			duplicate = "// Duplicate value: "
 		}
-		g.P(duplicate, e.Number, ": ", strconv.Quote(strings.TrimPrefix(CamelCase(strings.ToLower(*e.Name)), ccTypeName)), ",")
+		g.P(duplicate, e.Number, ": ", strconv.Quote(g.trimEnumValueTypePrefix(*e.Name, ccTypeName)), ",")
 		generated[*e.Number] = true
 	}
 	g.Out()
@@ -1524,7 +1524,7 @@ func (g *Generator) generateEnum(enum *EnumDescriptor) {
 	g.P("var ", ccTypeName, "_value = map[string]int32{")
 	g.In()
 	for _, e := range enum.Value {
-		g.P(strconv.Quote(strings.TrimPrefix(CamelCase(strings.ToLower(*e.Name)), ccTypeName)), ": ", e.Number, ",")
+		g.P(strconv.Quote(g.trimEnumValueTypePrefix(*e.Name, ccTypeName)), ": ", e.Number, ",")
 	}
 	g.Out()
 	g.P("}")
@@ -1592,6 +1592,10 @@ func (g *Generator) generateEnum(enum *EnumDescriptor) {
 	}
 
 	g.generateEnumRegistration(enum)
+}
+
+func (g *Generator) trimEnumValueTypePrefix(enumValue, ccTypeName string)string {
+	return strings.TrimPrefix(CamelCaseFromScreamingCase(enumValue), ccTypeName)
 }
 
 // The tag is a string like "varint,2,opt,name=fieldname,def=7" that
@@ -3287,6 +3291,11 @@ func isASCIILower(c byte) bool {
 	return 'a' <= c && c <= 'z'
 }
 
+// Is c an ASCII upper-case letter?
+func isASCIIUpper(c byte) bool {
+	return 'A' <= c && c <= 'Z'
+}
+
 // Is c an ASCII digit?
 func isASCIIDigit(c byte) bool {
 	return '0' <= c && c <= '9'
@@ -3334,6 +3343,44 @@ func CamelCase(s string) string {
 		for i+1 < len(s) && isASCIILower(s[i+1]) {
 			i++
 			t = append(t, s[i])
+		}
+	}
+	return string(t)
+}
+
+// CamelCaseFromScreamingCase returns the CamelCased name.
+// If there is an interior underscore followed by a upper case letter,
+// drop the underscore and convert all but the letter to lower case.
+// In short, MY_FIELD_NAME_2 becomes MyFieldName2.
+func CamelCaseFromScreamingCase(s string) string {
+	if s == "" {
+		return ""
+	}
+	t := make([]byte, 0, 32)
+	// That is, we process a word at a time, where words are marked by _ or
+	// upper case letter. Digits are treated as words.
+	wordStart := true
+	for i := 0; i < len(s); i++ {
+		c := s[i]
+		if c == '_' {
+			wordStart = true
+			continue // Skip the underscore in s.
+		}
+		if isASCIIDigit(c) {
+			t = append(t, c)
+			continue
+		}
+		if wordStart {
+			if isASCIILower(c) {
+				c ^= ' ' // Make it a capital letter.
+			}
+			t = append(t, c) // Guaranteed not lower case.
+			wordStart = false
+		} else {
+			if isASCIIUpper(c) {
+				c ^= ' ' // Make it a lower letter.
+			}
+			t = append(t, c) // Guaranteed lower case.
 		}
 	}
 	return string(t)

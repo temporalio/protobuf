@@ -57,6 +57,26 @@ func TestCamelCase(t *testing.T) {
 	}
 }
 
+func TestCamelCaseFromScreamingCase(t *testing.T) {
+	tests := []struct {
+		in, want string
+	}{
+		{"ONE", "One"},
+		{"ONE_TWO", "OneTwo"},
+		{"_MY_FIELD_NAME_2", "MyFieldName2"},
+		{"Something_Capped", "SomethingCapped"},
+		{"my_Name", "MyName"},
+		{"OneTwo", "Onetwo"},
+		{"_", ""},
+		{"_a_", "A"},
+	}
+	for _, tc := range tests {
+		if got := CamelCaseFromScreamingCase(tc.in); got != tc.want {
+			t.Errorf("CamelCaseFromScreamingCase(%q) = %q, want %q", tc.in, got, tc.want)
+		}
+	}
+}
+
 func TestGoPackageOption(t *testing.T) {
 	tests := []struct {
 		in      string
