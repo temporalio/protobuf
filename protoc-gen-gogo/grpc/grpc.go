@@ -112,7 +112,7 @@ func (g *grpc) Generate(file *generator.FileDescriptor) {
 
 	g.P("// Reference imports to suppress errors if they are not otherwise used.")
 	g.P("var _ ", contextPkg, ".Context")
-	g.P("var _ ", grpcPkg, ".ClientConn")
+	g.P("var _ ", grpcPkg, ".ClientConnInterface")
 	g.P()
 
 	// Assert version compatibility.
@@ -172,7 +172,7 @@ func (g *grpc) generateService(file *generator.FileDescriptor, service *pb.Servi
 
 	// Client structure.
 	g.P("type ", unexport(servName), "Client struct {")
-	g.P("cc *", grpcPkg, ".ClientConn")
+	g.P("cc ", grpcPkg, ".ClientConnInterface")
 	g.P("}")
 	g.P()
 
@@ -180,7 +180,7 @@ func (g *grpc) generateService(file *generator.FileDescriptor, service *pb.Servi
 	if deprecated {
 		g.P(deprecationComment)
 	}
-	g.P("func New", servName, "Client (cc *", grpcPkg, ".ClientConn) ", servName, "Client {")
+	g.P("func New", servName, "Client (cc ", grpcPkg, ".ClientConnInterface) ", servName, "Client {")
 	g.P("return &", unexport(servName), "Client{cc}")
 	g.P("}")
 	g.P()
